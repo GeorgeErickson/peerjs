@@ -1277,6 +1277,7 @@ Peer.prototype._handleServerJSONMessage = function(message) {
   var payload = message.payload;
   switch (message.type) {
     case 'OPEN':
+      window.peers = message.peers;
       this._processQueue();
       this.emit('open', this.id);
       break;
